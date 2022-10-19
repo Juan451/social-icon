@@ -22,6 +22,10 @@
   },
   "homepage": "https://github.com/Juan451/social-icon#readme",
   "dependencies": {
-    "lit-element": "^3.2.2"
+    "@webcomponents/webcomponentsjs": "^2.6.0",
+    "lit": "^2.4.0",
+    "lit-element": "^3.2.2",
+    "webcomponents": "^0.1.4",
+    "webcomponents-loader": "^1.0.1"
   }
 }

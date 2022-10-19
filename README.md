@@ -4,7 +4,7 @@
 
 # social-icon
 
-Web component to display icons from the main social networks and communities, based on LitElement, similar to PolyDile components.
+Web component to display icons from the main social networks and communities, based on Lit, similar to PolyDile components.
 
 Go to [DEMO page](https://dile-social-icon.polydile.com)!
 

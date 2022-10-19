@@ -1,9 +1,60 @@
-import { LitElement, html } from 'lit-element';
+import { LitElement, html, css } from 'lit';
 
-export class SocialIcon extends LitElement {
 
-    render() {
-        return html``;
-    }
+import { icons } from "./icons";
+
+/**
+ *
+ * # <social-icon>
+ *
+ * Web component to create social icons, based on Lit.
+ *
+ * The "icon" property is used to set the social network to display
+ *
+ */
+
+ export class SocialIcon extends LitElement {
+  static get properties() {
+    return {
+      icon: { type: String },
+    };
+  }
+
+  constructor() {
+    super();
+    this.icon = "facebook";
+  }
+
+  static get styles() {
+    return css`
+      :host[hidden] {
+        display: none;
+      }
+      :host {
+        display: inline-block;
+      }
+      path {
+        fill: var(--social-icon-color, #888);
+      }
+      path[fill="none"] {
+        fill: transparent;
+      }
+      svg {
+        width: var(--social-icon-size, 24px);
+        height: var(--social-icon-size, 24px);
+      }
+      div {
+        display: flex;
+      }
+    `;
+  }
+
+  render() {
+    return html` <div>${this._getIcon(this.icon)}</div> `;
+  }
+
+  _getIcon(icon) {
+    return icons[icon];
+  }
 }
-customElements.define('social-icon', SocialIcon);
+customElements.define("social-icon", SocialIcon);
